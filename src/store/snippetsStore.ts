@@ -8,18 +8,18 @@ interface Snippet {
 interface SnippetState {
   snippetsNames: string[];
   selectedSnippet: Snippet | null;
-  snippetFolder: string; // Nueva propiedad para la carpeta seleccionada
+  snippetFolder: string; // New property for selected folder
   addSnippetName: (name: string) => void;
   setSnippetsNames: (names: string[]) => void;
   setSelectedSnippet: (snippet: Snippet | null) => void;
   removeSnippetName: (name: string) => void;
-  setSnippetFolder: (folder: string) => void; // Nuevo método
+  setSnippetFolder: (folder: string) => void; // New method
 }
 
 export const useSnippetStore = create<SnippetState>((set) => ({
   snippetsNames: [],
   selectedSnippet: null,
-  snippetFolder: "", // Valor inicial vacío
+  snippetFolder: "", // Empty initial value
   addSnippetName: (name) =>
     set((state) => ({
       snippetsNames: [...state.snippetsNames, name],
@@ -30,5 +30,5 @@ export const useSnippetStore = create<SnippetState>((set) => ({
     set((state) => ({
       snippetsNames: state.snippetsNames.filter((n) => n !== name),
     })),
-  setSnippetFolder: (folder) => set({ snippetFolder: folder }), // Implementación del nuevo método
+  setSnippetFolder: (folder) => set({ snippetFolder: folder }), // Implementation of the new method
 }));

@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 function SnippetList() {
   const setSnippetsNames = useSnippetStore((state) => state.setSnippetsNames);
   const snippetsNames = useSnippetStore((state) => state.snippetsNames);
-  const snippetFolder = useSnippetStore((state) => state.snippetFolder); // Carpeta seleccionada
+  const snippetFolder = useSnippetStore((state) => state.snippetFolder); // Selected folder
 
   useEffect(() => {
     async function loadFiles() {
@@ -26,7 +26,7 @@ function SnippetList() {
       try {
         const result = await readDir(snippetFolder);
         const filenames = result
-          .filter((file) => file.name?.endsWith(".md")) // Filtrar solo archivos .md
+          .filter((file) => file.name?.endsWith(".md")) // Filter .md files only
           .map((file) => file.name!.split(".")[0]);
         setSnippetsNames(filenames);
       } catch (error) {

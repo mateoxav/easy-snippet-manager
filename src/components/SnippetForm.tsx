@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 function SnippetForm() {
   const [snippetName, setSnippetName] = useState("");
   const addSnippetName = useSnippetStore((state) => state.addSnippetName);
-  const snippetFolder = useSnippetStore((state) => state.snippetFolder); // Carpeta seleccionada
+  const snippetFolder = useSnippetStore((state) => state.snippetFolder); // Selected folder
 
   return (
     <form

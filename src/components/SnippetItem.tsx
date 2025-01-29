@@ -5,7 +5,7 @@ import { join } from "@tauri-apps/api/path";
 import { toast } from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 import { RiArrowGoBackLine } from "react-icons/ri";
-import { FaCopy } from "react-icons/fa"; // Nuevo icono para copiar
+import { FaCopy } from "react-icons/fa";
 
 interface Props {
   snippetName: string;

@@ -9,12 +9,12 @@ import { toast } from "react-hot-toast";
 function SnippetEditor() {
   const selectedSnippet = useSnippetStore((state) => state.selectedSnippet);
   const snippetFolder = useSnippetStore((state) => state.snippetFolder);
-  const [text, setText] = useState<string>("");  // Cambiado a string vacío como valor inicial
+  const [text, setText] = useState<string>("");  // Changed to empty string as initial value
 
-  // Actualizar el texto cuando cambia el snippet seleccionado
+  // Update text when selected snippet changes
   useEffect(() => {
     if (selectedSnippet?.code) {
-      // Asegurarse de que el código sea string
+      // Make sure the code is string
       setText(typeof selectedSnippet.code === 'string' ? selectedSnippet.code : '');
     } else {
       setText('');
@@ -27,7 +27,7 @@ function SnippetEditor() {
     const saveText = setTimeout(async () => {
       try {
         const filePath = await join(snippetFolder, `${selectedSnippet.name}.md`);
-        // Asegurarse de que text sea string antes de guardar
+        // Make sure text is string before saving
         const contentToSave = typeof text === 'string' ? text : '';
         await writeTextFile(filePath, contentToSave);
         
@@ -68,8 +68,8 @@ function SnippetEditor() {
             minimap: { enabled: false },
             wordWrap: "on",
           }}
-          onChange={(value) => setText(value || "")}  // Asegurar que nunca sea undefined
-          value={text}  // Usar el estado local en lugar de selectedSnippet.code
+          onChange={(value) => setText(value || "")}  // Ensure it is never undefined
+          value={text}  // Use local status instead of selectedSnippet.code
         />
       ) : (
         <div className="h-full flex items-center justify-center">
