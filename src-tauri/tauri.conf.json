@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "SnippetSave1.0",
+  "productName": "EasySnippets",
   "version": "0.1.0",
   "identifier": "com.ssave.app",
   "build": {
