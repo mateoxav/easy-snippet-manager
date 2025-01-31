@@ -31,7 +31,7 @@ function SnippetEditor() {
         const contentToSave = typeof text === 'string' ? text : '';
         await writeTextFile(filePath, contentToSave);
         
-        toast.success("Snippet guardado", {
+        toast.success("Snippet saved", {
           duration: 2000,
           position: "bottom-right",
           style: {
@@ -41,7 +41,7 @@ function SnippetEditor() {
         });
       } catch (error) {
         console.error("Error saving snippet:", error);
-        toast.error("Error al guardar el snippet", {
+        toast.error("Error saving snippet", {
           duration: 3000,
           position: "bottom-right",
           style: {

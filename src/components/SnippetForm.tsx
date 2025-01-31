@@ -14,7 +14,7 @@ function SnippetForm() {
         e.preventDefault();
 
         if (!snippetFolder) {
-          toast.error("No se ha seleccionado una carpeta para guardar snippets.", {
+          toast.error("A folder for saving snippets has not been selected.", {
             duration: 3000,
             position: "bottom-right",
             style: {
@@ -29,7 +29,7 @@ function SnippetForm() {
         setSnippetName("");
         addSnippetName(snippetName);
 
-        toast.success("Snippet creado", {
+        toast.success("Snippet created", {
           duration: 2000,
           position: "bottom-right",
           style: {
@@ -41,7 +41,7 @@ function SnippetForm() {
     >
       <input
         type="text"
-        placeholder="Escribe un Snippet"
+        placeholder="Write a Snippet"
         className="bg-zinc-900 w-full border-none outline-none p-4"
         onChange={(e) => setSnippetName(e.target.value)}
         value={snippetName}

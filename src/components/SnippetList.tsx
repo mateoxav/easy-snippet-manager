@@ -12,7 +12,7 @@ function SnippetList() {
   useEffect(() => {
     async function loadFiles() {
       if (!snippetFolder) {
-        toast.error("No se ha seleccionado una carpeta para los snippets.", {
+        toast.error("No folder has been selected for the snippets.", {
           duration: 3000,
           position: "bottom-right",
           style: {
@@ -30,7 +30,7 @@ function SnippetList() {
           .map((file) => file.name!.split(".")[0]);
         setSnippetsNames(filenames);
       } catch (error) {
-        toast.error("Error al cargar los snippets. Verifica la carpeta seleccionada.", {
+        toast.error("Error loading snippets. Check the selected folder.", {
           duration: 3000,
           position: "bottom-right",
           style: {

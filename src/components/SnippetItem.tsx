@@ -19,7 +19,7 @@ function SnippetItem({ snippetName }: Props) {
 
   const handleDelete = async (snippetName: string) => {
     if (!snippetFolder) {
-      toast.error("No se ha seleccionado una carpeta para los snippets.", {
+      toast.error("No folder has been selected for the snippets.", {
         duration: 3000,
         position: "bottom-right",
         style: {
@@ -30,14 +30,14 @@ function SnippetItem({ snippetName }: Props) {
       return;
     }
 
-    const accept = await window.confirm("¿Estás seguro de que quieres borrar este snippet?");
+    const accept = await window.confirm("Are you sure you want to delete this snippet?");
     if (!accept) return;
 
     const filePath = await join(snippetFolder, `${snippetName}.md`);
     await remove(filePath);
     removeSnippetName(snippetName);
 
-    toast.success("Snippet eliminado", {
+    toast.success("Snippet removed", {
       duration: 2000,
       position: "bottom-right",
       style: {
@@ -49,7 +49,7 @@ function SnippetItem({ snippetName }: Props) {
 
   const handleCopyToClipboard = async () => {
     if (!selectedSnippet?.code) {
-      toast.error("No hay código para copiar.", {
+      toast.error("No code to copy.", {
         duration: 2000,
         position: "bottom-right",
         style: {
@@ -62,7 +62,7 @@ function SnippetItem({ snippetName }: Props) {
 
     try {
       await navigator.clipboard.writeText(selectedSnippet.code);
-      toast.success("Código copiado al portapapeles", {
+      toast.success("Code copied to clipboard", {
         duration: 2000,
         position: "bottom-right",
         style: {
@@ -71,8 +71,8 @@ function SnippetItem({ snippetName }: Props) {
         },
       });
     } catch (error) {
-      console.error("Error al copiar al portapapeles:", error);
-      toast.error("Error al copiar el código", {
+      console.error("Error when copying to clipboard:", error);
+      toast.error("Error copying code", {
         duration: 3000,
         position: "bottom-right",
         style: {
@@ -91,7 +91,7 @@ function SnippetItem({ snippetName }: Props) {
       )}
       onClick={async () => {
         if (!snippetFolder) {
-          toast.error("No se ha seleccionado una carpeta para los snippets.", {
+          toast.error("No folder has been selected for the snippets.", {
             duration: 3000,
             position: "bottom-right",
             style: {
