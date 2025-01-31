@@ -30,7 +30,7 @@ Follow these steps to configure the application:
 ### 1. Clone the repository:
 ```bash
 git clone https://github.com/mateoxav/easy-snippet-manager.git
-cd SnippetsManager
+cd easy-snippet-manager 
 ```
 
 ### 2. Install the dependencies:
