@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "FastSnippets",
+  "productName": "EasySnippetManager",
   "version": "1.0.0",
   "identifier": "com.mateoxav.snippets",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "FastSnippets",
+        "title": "EasySnippetManager",
         "width": 1100,
         "height": 700
       }
